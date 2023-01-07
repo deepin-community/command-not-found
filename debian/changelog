@@ -1,3 +1,9 @@
+command-not-found (20.10.1.1-deepin1) unstable; urgency=medium
+
+  * Add nocheck for auto_test
+
+ -- Han Gao <gaohan@iscas.ac.cn>  Sat, 07 Jan 2023 16:15:20 +0800
+
 command-not-found (20.10.1-1) unstable; urgency=medium
 
   * Trim trailing whitespace.
