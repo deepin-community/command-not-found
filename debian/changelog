@@ -1,8 +1,50 @@
-command-not-found (20.10.1.1-deepin1) unstable; urgency=medium
+command-not-found (23.04.0-1) unstable; urgency=medium
 
-  * Add nocheck for auto_test
+  * New upstream version 23.04.0
+  * Drop 0003-cnf-update-db-Add-support-for-Contents-files.patch, merged
+    upstream, add use-contents.patch instead to enable it.
+  * debian/watch: Point at xz tarball
+  * debian/tests: Add adduser dependency, fix test to not assume vim-tiny
+    matches for vim.
 
- -- Han Gao <gaohan@iscas.ac.cn>  Sat, 07 Jan 2023 16:15:20 +0800
+ -- Julian Andres Klode <juliank@ubuntu.com>  Fri, 20 Jan 2023 14:57:40 +0100
+
+command-not-found (23.04.0) lunar; urgency=medium
+
+  * Add support for deb822 sources in python-apt > 2.5.1
+  * Handle unknown components in db creator (Closes: #968757)
+  * Recognize non-free-firmware in the db creator
+  * Update translations from launchpad
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Fri, 20 Jan 2023 14:39:07 +0100
+
+command-not-found (22.04.0) jammy; urgency=medium
+
+  [ Arnaud Rebillout ]
+  * cnf: Bail out early if the database is not readable
+  * cnf-update-db: Creates a world-readable database (Closes: #986461)
+  * Add test to make sure that the database is world-readable
+
+  [ Julian Andres Klode ]
+  * cnf-update-db: Add support for Contents files
+  * Suggest apt update if no commands file could be found (Closes: #857090)
+  * Packaging update:
+    - Point Vcs-Git to the git-ubuntu repo
+    - Upgrade to debhelper-compat (= 11)
+    - Update debian/copyright from debian
+    - changelog: Trim trailing spaces and fix syntax error
+    - Remove empty postinst script
+    - Drop obsolete X-Python3-Version field
+    - Bump Standards-Version to 4.6.0
+    - Add debian/source/format: 3.0 (native)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Wed, 08 Dec 2021 11:53:19 +0100
+
+command-not-found (21.10.0) impish; urgency=medium
+
+  * Correctly handle compressed APT index files (LP: #1876034)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Thu, 23 Sep 2021 15:32:30 +0200
 
 command-not-found (20.10.1-1) unstable; urgency=medium
 
@@ -581,7 +623,6 @@ command-not-found (0.2.41ubuntu6) UNRELEASED; urgency=low
 
   * merged lp:~julien-nicoulaud/command-not-found/fix-zsh-hook,
     many thanks to Julien Nicoulaud (LP: #624565)
-ents
 
  -- Michael Vogt <michael.vogt@ubuntu.com>  Mon, 15 Aug 2011 16:56:18 +0200
 

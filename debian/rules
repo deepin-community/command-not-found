@@ -12,6 +12,4 @@ override_dh_auto_install:
 	rm $(CURDIR)/debian/command-not-found/etc/bash_command_not_found
 
 override_dh_auto_test:
-ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 	python3 -m unittest discover
-endif
