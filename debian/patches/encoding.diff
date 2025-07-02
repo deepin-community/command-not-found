@@ -1,0 +1,40 @@
+Description: Solve the character encoding problem
+ Use charset_normalizer to detect command's charset when it's not utf-8,
+ to avoid error on executables with other encodings.
+
+---
+
+Origin: vendor
+Bug: https://github.com/linuxdeepin/developer-center/issues/11122
+Forwarded: no
+Last-Update: 2025-07-02
+
+--- command-not-found-23.04.0.orig/CommandNotFound/db/creator.py
++++ command-not-found-23.04.0/CommandNotFound/db/creator.py
+@@ -9,6 +9,8 @@ import subprocess
+ import sys
+ import time
+ 
++import charset_normalizer
++
+ import apt_pkg
+ apt_pkg.init()
+ 
+@@ -238,7 +240,16 @@ class DbCreator:
+         suite=None      # FIXME
+ 
+         for l in fp:
+-            l = l.decode("utf-8")
++            # Handle character encoding
++            try:
++                l = l.decode("utf-8")
++            except UnicodeDecodeError:
++                charset = charset_normalizer.from_bytes(l).best()
++                if charset is None:
++                    ValueError(l)
++                else:
++                    l = l.decode(charset.encoding)
++
+             if not (l.startswith('usr/sbin') or l.startswith('usr/bin') or
+                     l.startswith('bin') or l.startswith('sbin')):
+                 continue

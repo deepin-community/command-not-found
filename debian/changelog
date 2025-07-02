@@ -1,3 +1,9 @@
+command-not-found (23.04.0-1deepin2) unstable; urgency=medium
+
+  * Add a patch to solve error when encodings different than utf-8
+
+ -- April Lu <apr3vau@outlook.com>  Wed, 02 Jun 2025 20:45:00 +0800
+
 command-not-found (23.04.0-1deepin1) unstable; urgency=medium
 
   * No source update, fix obs build error.
