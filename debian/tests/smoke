@@ -9,8 +9,8 @@ echo "Ensure apt update runs without errors"
 apt-get update
 
 echo "Ensure we have results from c-n-f"
-/usr/lib/command-not-found --ignore-installed vim 2>&1 | grep vim
-/usr/lib/command-not-found --ignore-installed vim 2>&1 | grep "command '.*' from deb "
+/usr/lib/command-not-found --ignore-installed apt-ftparchive 2>&1 | grep apt-utils
+/usr/lib/command-not-found --ignore-installed apt-ftparchive 2>&1 | grep -xF "apt install apt-utils"
 
 
 echo "Add testuser"

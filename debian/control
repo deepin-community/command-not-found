@@ -2,7 +2,8 @@ Source: command-not-found
 Section: admin
 Priority: optional
 Maintainer: Julian Andres Klode <jak@debian.org>
-Build-Depends: debhelper-compat (= 11),
+Build-Depends: apt,
+               debhelper-compat (= 11),
                devscripts,
                dh-python,
                intltool,
