@@ -1,8 +1,14 @@
-command-not-found (23.04.0-1deepin1) unstable; urgency=medium
+command-not-found (23.04.0-3) unstable; urgency=medium
 
-  * No source update, fix obs build error.
+  * Add Build-Depends: apt (Closes: #1104512)
 
- -- xiangzelong <xiangzelong@deepin.org>  Fri, 30 Aug 2024 11:21:52 +0800
+ -- Julian Andres Klode <jak@debian.org>  Fri, 31 Oct 2025 22:03:26 +0100
+
+command-not-found (23.04.0-2) unstable; urgency=medium
+
+  * Switch smoke test canary from vim to apt-ftparchive (Closes: #1078355)
+
+ -- Julian Andres Klode <jak@debian.org>  Sat, 07 Sep 2024 09:49:25 +0200
 
 command-not-found (23.04.0-1) unstable; urgency=medium
 
