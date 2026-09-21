@@ -1,3 +1,9 @@
+command-not-found (23.04.0-3deepin1) unstable; urgency=medium
+
+  * Skip flaky test "multi advise debs".
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Mon, 21 Sep 2026 15:25:28 +0800
+
 command-not-found (23.04.0-3) unstable; urgency=medium
 
   * Add Build-Depends: apt (Closes: #1104512)
